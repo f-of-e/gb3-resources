@@ -96,7 +96,7 @@ We need the tool `iceprog` to program the ice40 FPGA. It comes as a part of the 
 	```
 
 ## Setting up GB3
-To get started, fork and clone the following repository: [https://github.com/physical-computation/gb3-resources](https://github.com/physical-computation/gb3-resources).
+To get started, fork and clone the following repository: [https://github.com/f-of-e/gb3-resources](https://github.com/f-of-e/gb3-resources).
 
 This repository is organised as follows:
 ```
@@ -133,18 +133,18 @@ docker build --rm -f gb3-tools.Dockerfile -t <name of image>:latest .
 ### Pulling the Docker image
 To use a Docker image, you must pull the Docker image. This image is stored in a container registry, much like package registries for software. **Run on host terminal**:
 ```bash
-docker pull ghcr.io/physical-computation/gb3-tools:latest
+docker pull ghcr.io/f-of-e/gb3-tools:latest
 ```
 
 You can inspect the image by using [docker inspect](https://docs.docker.com/engine/reference/commandline/inspect/). **Run on host terminal**:
 ```bash
-docker inspect ghcr.io/physical-computation/gb3-tools:latest
+docker inspect ghcr.io/f-of-e/gb3-tools:latest
 ```
 This gives you some low-level information about the image. In particular, it shows the `Architecture` and the `Os` that the image was built for.
 
 Once you have done that, you can interact with it by running a container that opens an interactive shell inside it. **Run on host terminal**:
 ```bash
-docker run --rm -it ghcr.io/physical-computation/gb3-tools:latest /bin/bash
+docker run --rm -it ghcr.io/f-of-e/gb3-tools:latest /bin/bash
 ```
 You can now interact with the operating system using the command line. Such a terminal is what we refer to as **a container terminal**.
 
@@ -161,7 +161,7 @@ Generally, any code written inside a Docker container are contained within it. F
 
 Run the following command from the root of the repository. **Run on host terminal**:
 ```bash
-docker run --rm -it -v $(pwd):/gb3-resources ghcr.io/physical-computation/gb3-tools:latest /bin/bash
+docker run --rm -it -v $(pwd):/gb3-resources ghcr.io/f-of-e/gb3-tools:latest /bin/bash
 ```
 **If you must run a command *in the container*, you must first run the command above.
 
@@ -170,7 +170,7 @@ This creates a mirror of the repository in the container, at location `/gb3-reso
 Note - If you are on Windows, you should run this command with the full path of the directory with the course tools instead of $(pwd). For example, if you cloned this repository to `D:\gb3-resources\`, you should run:
 
 ```bash
-docker run --rm -it -v D:\gb3-resources\:/gb3-resources ghcr.io/physical-computation/gb3-tools:latest /bin/bash
+docker run --rm -it -v D:\gb3-resources\:/gb3-resources ghcr.io/f-of-e/gb3-tools:latest /bin/bash
 ```
 
 You can exit the container by running `exit` inside the container. **Run on container terminal**:
