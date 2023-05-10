@@ -1,8 +1,12 @@
+# disallow all files without extensions
 *
 !*.*
 !*/
+
+# allow Makefiles
 !**Makefile**
 
+# vscode and mac specific files
 .vscode/**
 .DS_Store**
 
