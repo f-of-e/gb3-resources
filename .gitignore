@@ -5,6 +5,7 @@
 
 # allow Makefiles
 !**Makefile**
+!processor/verilog
 
 # vscode and mac specific files
 .vscode/**
