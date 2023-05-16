@@ -66,6 +66,7 @@ ADD Makefile-sf /f-of-e-tools/tools/sunflower/sunflower-toolchain/Makefile
 RUN cd /f-of-e-tools/tools/sunflower/tools/source && ./downloads.sh
 RUN cd /f-of-e-tools/tools/sunflower && make cross-riscv
 RUN cd /f-of-e-tools/tools/sunflower && make
+RUN export PATH=/f-of-e-tools/tools/sunflower/sim/:$PATH
 
 # iverilog
 RUN apt-get install -y iverilog
